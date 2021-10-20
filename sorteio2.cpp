@@ -2,26 +2,25 @@
 #include<cstdlib>
 #include<ctime>
 
-#define LIMITE 100000
+#define LIMITE 7
 
 int dado();
 int main(){
 	
-	int numero = 0;
+	for(int i = 0; i < 10000000; i++){
+		std::cout << dado();
+	}
 	
-	std::cout << "Digite um numero para eu adivinhar: ";
-	std::cin >> numero;
-	
-	int result = dado();
-	std::cout << result;
-	
-	
+	return 0;
 }
 
 int dado(){
 	
     srand(time(NULL));
     int sorteio = rand() % LIMITE;
+    while(sorteio == 0 ){
+    	int sorteio = rand() % LIMITE;
+	}
     return sorteio;
 
 }
