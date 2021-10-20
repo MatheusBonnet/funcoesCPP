@@ -48,8 +48,8 @@ float duasNotas(float a, float b, float c){
 		menor = a;
 		}
 	}
-	else if(c > b && c > a){
-	 	maior = c;
+	else {
+		maior = c;
 	 	if(a > b){
 	 		medio = a;
 			menor = b;	
