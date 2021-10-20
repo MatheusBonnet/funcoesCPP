@@ -2,15 +2,25 @@
 #include<cstdlib>
 #include<ctime>
 
-#define LIMITE 7
+#define LIMITE 6
 
 int dado();
 int main(){
 	
-	for(int i = 0; i < 10000000; i++){
-		std::cout << dado();
+	int lados[] = {0,0,0,0,0,0};
+
+
+
+	for(int i = 0; i < 100000; i++){
+	int sorteio = dado();
+	lados[sorteio - 1]++;
+	std::cout << sorteio;
 	}
-	
+
+	std::cout << "\n --------------- \n";
+	for(int i = 0; i < 6; i++){
+	std::cout << "\n Lado " << i + 1 << ": " << lados[i];
+	}
 	return 0;
 }
 
@@ -20,7 +30,7 @@ int dado(){
     int sorteio = rand() % LIMITE;
     while(sorteio == 0 ){
     	int sorteio = rand() % LIMITE;
-	}
+    }
     return sorteio;
 
 }
